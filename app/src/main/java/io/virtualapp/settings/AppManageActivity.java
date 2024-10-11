@@ -237,8 +237,8 @@ public class AppManageActivity extends VActivity {
 
     private void showUninstallDialog(AppManageInfo item, CharSequence name) {
         AlertDialog alertDialog = new AlertDialog.Builder(AppManageActivity.this)
-                .setTitle(com.android.launcher3.R.string.home_menu_delete_title)
-                .setMessage(getResources().getString(com.android.launcher3.R.string.home_menu_delete_content, name))
+                .setTitle(R.string.home_menu_delete_title)
+                .setMessage(getResources().getString(R.string.home_menu_delete_content, name))
                 .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                     VirtualCore.get().uninstallPackageAsUser(item.pkgName, item.userId);
                     loadAsync();

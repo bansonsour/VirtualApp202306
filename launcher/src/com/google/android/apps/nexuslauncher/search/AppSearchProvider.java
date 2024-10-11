@@ -27,6 +27,7 @@ import com.android.launcher3.model.BgDataModel;
 import com.android.launcher3.model.LoaderResults;
 import com.android.launcher3.util.ComponentKey;
 import com.android.launcher3.util.LooperExecutor;
+import com.google.android.apps.nexuslauncher.utils.BuildUtil;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -42,6 +43,7 @@ import java.util.concurrent.TimeoutException;
 
 public class AppSearchProvider extends ContentProvider
 {
+    public static String AUTHORITY = BuildUtil.getApplicationId() + ".appssearch";
     private static final String[] eK = new String[] { "_id", "suggest_text_1", "suggest_icon_1", "suggest_intent_action", "suggest_intent_data" };
     private final PipeDataWriter<Future> mPipeDataWriter;
     private LooperExecutor mLooper;
@@ -76,7 +78,7 @@ public class AppSearchProvider extends ContentProvider
     public static Uri buildUri(final AppInfo appInfo, final UserManagerCompat userManagerCompat) {
         return new Uri.Builder()
                 .scheme("content")
-                .authority(BuildConfig.APPLICATION_ID + ".appssearch")
+                .authority(AUTHORITY)
                 .appendQueryParameter("component", appInfo.componentName.flattenToShortString())
                 .appendQueryParameter("user", Long.toString(userManagerCompat.getSerialNumberForUser(appInfo.user)))
                 .build();

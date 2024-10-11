@@ -6,10 +6,32 @@ buildscript {
             url 'https://maven.google.com/'
             name 'Google'
         }
+        maven { url 'https://jitpack.io' }
         jcenter()
+        maven {
+            url "https://maven.aliyun.com/repository/central"
+        }
+
+        maven {
+            url "https://maven.aliyun.com/repository/gradle-plugin"
+        }
+        maven {
+            url "https://maven.aliyun.com/repository/spring"
+        }
+        maven {
+            url "https://maven.aliyun.com/repository/spring-plugin"
+        }
+
+        maven {
+            url "https://maven.aliyun.com/repository/grails-core"
+        }
+
+        maven {
+            url "https://maven.aliyun.com/repository/apache-snapshots"
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.6.1'
         classpath 'com.android.tools.build:gradle-experimental:0.11.1'
         // We recommend changing it to the latest version from our changelog:
         // https://docs.fabric.io/android/changelog.html#fabric-gradle-plugin
@@ -27,6 +49,28 @@ allprojects {
             name 'Google'
         }
         jcenter()
+
+        maven {
+            url "https://maven.aliyun.com/repository/central"
+        }
+
+        maven {
+            url "https://maven.aliyun.com/repository/gradle-plugin"
+        }
+        maven {
+            url "https://maven.aliyun.com/repository/spring"
+        }
+        maven {
+            url "https://maven.aliyun.com/repository/spring-plugin"
+        }
+
+        maven {
+            url "https://maven.aliyun.com/repository/grails-core"
+        }
+
+        maven {
+            url "https://maven.aliyun.com/repository/apache-snapshots"
+        }
     }
 }
 

@@ -66,6 +66,7 @@ import com.android.launcher3.util.ManagedProfileHeuristic;
 import com.android.launcher3.util.NoLocaleSqliteContext;
 import com.android.launcher3.util.Preconditions;
 import com.android.launcher3.util.Thunk;
+import com.google.android.apps.nexuslauncher.utils.BuildUtil;
 
 import java.io.File;
 import java.io.FileDescriptor;
@@ -87,7 +88,9 @@ public class LauncherProvider extends ContentProvider {
      */
     public static final int SCHEMA_VERSION = 27;
 
-    public static final String AUTHORITY = (BuildConfig.APPLICATION_ID + ".settings").intern();
+    //public static final String AUTHORITY = (BuildConfig.APPLICATION_ID + ".settings").intern();
+
+    public static final String AUTHORITY = BuildUtil.getApplicationId() + ".settings";
 
     static final String EMPTY_DATABASE_CREATED = "EMPTY_DATABASE_CREATED";
 

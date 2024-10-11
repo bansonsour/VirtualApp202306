@@ -4065,4 +4065,17 @@ public class Launcher extends BaseActivity
             }
         }
     }
+
+    public void startVirtualActivity(Intent intent, Bundle options, int usedId) {
+        startActivity(intent, options);
+    }
+
+    protected void setOurWallpaper(Drawable d) {
+        if (d == null) {
+            return;
+        }
+        mLauncherView.setBackgroundDrawable(d);
+    }
+
+
 }
